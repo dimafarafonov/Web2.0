@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getDecimal(a) {
+        var str = "" + a;
+        var zero = str.indexOf(".");
+        if (zero == -1)
+            return alert("Плохое число");
+        if(a<0){
+            str = "-"+str.slice(zero);
+        }else
+        str = str.slice(zero);
+        return +str;
+    }
+
+    alert(getDecimal(12.345));
+    // 0.345
+    alert(getDecimal(1.2));
+    // 0.2
+    alert(getDecimal(-1.2));
+    // -0.2
+</script>
+</body>
+</html>
