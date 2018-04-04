@@ -1,5 +1,6 @@
 function isIPAddress(ip) {
-    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ip)) {
+
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\./.test(ip)) {
         return (true);
     }
     return (false);
@@ -12,7 +13,7 @@ function isRGBA(text) {
 
 function findHexColor(text){
     var re = /#[a-f0-9]{6}/gi;
-    return text.match(hexRegex) !== null ? text.match(hexRegex) : null;
+    return text.match(re) !== null ? text.match(re) : null;
 }
 
 function findTags(text, tag) {

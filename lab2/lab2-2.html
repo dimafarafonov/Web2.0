@@ -7,16 +7,16 @@
 <body>
 <script src="lab2-2.js"></script>
 <script>
-    console.log(isIPAddress("125.65.145.28")); // true
-    console.log(isIPAddress("1111.11.11.11")); // false
+    console.log(isIPAddress("256.65.145.28")); // true
+    console.log(isIPAddress("111.11.11.11")); // false
     console.log(isRGBA("xxx rgba(100,200,255,0.5) xxx")); // rgba(100,200,255,0.5)
     console.log(isRGBA("xxx rgba(1000,200,255,5) xxx")); // null
     console.log(findHexColor("#efabcd")); // #efabcd
     console.log(findHexColor("xxx#A5C2EFxxx")); // #A5C2EF
-    console.log(findHexColor("xxx#aBcxxx")); // #aBc
+    console.log(findHexColor("xxx#aBcxxx")); // null
     console.log(findTags("xxx<p>xxx", "p")); // <p>
     console.log(findPosNum("x1.5x0x12.x123.4.x")); // 1.5, 0, 12, 123.4
-    console.log(findDates("x2018-02-26x11-11-11x01-02-2005x")); // 2018-02-26
+    console.log(findDates("x1905-02-26x11-11-11x01-02-2005x")); // 2018-02-26
 
 </script>
 </body>
