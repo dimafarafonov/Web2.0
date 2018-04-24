@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin-bottom: -10px;
+            padding: 0;
+        }
+        span{
+            margin: -3px;
+            padding: 0;
+        }
+
+        .red{
+            color: green;
+        }
+        .white{
+            color:white;
+        }
+
+        .main{
+            display:inline-block;
+            margin-left: 5px;
+        }
+
+        #field{
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+<br>
+<div class="main">
+    <div>
+        <span id="f1" class="red">■</span>
+        <span id="f2" class="red">■</span>
+        <span id="f3" class="red">■</span>
+    </div>
+    <div>
+        <span id="f4" class="red">■</span>
+        <span id="f5" class="red">■</span>
+        <span id="f6" class="red">■</span>
+    </div>
+    <div>
+        <span id="f7" class="red">■</span>
+        <span id="f8" class="red">■</span>
+        <span id="f9" class="red">■</span>
+    </div>
+    <div>
+        <span id="f10" class="red">■</span>
+        <span id="f11" class="red">■</span>
+        <span id="f12" class="red">■</span>
+    </div>
+    <div>
+        <span id="f13" class="red">■</span>
+        <span id="f14" class="red">■</span>
+        <span id="f15" class="red">■</span>
+    </div>
+</div>
+<div class="main">
+    <div>
+        <span id="s1" class="red">■</span>
+        <span id="s2" class="red">■</span>
+        <span id="s3" class="red">■</span>
+    </div>
+    <div>
+        <span id="s4" class="red">■</span>
+        <span id="s5" class="red">■</span>
+        <span id="s6" class="red">■</span>
+    </div>
+    <div>
+        <span id="s7" class="red">■</span>
+        <span id="s8" class="red">■</span>
+        <span id="s9" class="red">■</span>
+    </div>
+    <div>
+        <span id="s10" class="red">■</span>
+        <span id="s11" class="red">■</span>
+        <span id="s12" class="red">■</span>
+    </div>
+    <div>
+        <span id="s13" class="red">■</span>
+        <span id="s14" class="red">■</span>
+        <span id="s15" class="red">■</span>
+    </div>
+</div>
+<div class="main">
+    <div>
+        <span id="t1" class="red">■</span>
+        <span id="t2" class="red">■</span>
+        <span id="t3" class="red">■</span>
+    </div>
+    <div>
+        <span id="t4" class="red">■</span>
+        <span id="t5" class="red">■</span>
+        <span id="t6" class="red">■</span>
+    </div>
+    <div>
+        <span id="t7" class="red">■</span>
+        <span id="t8" class="red">■</span>
+        <span id="t9" class="red">■</span>
+    </div>
+    <div>
+        <span id="t10" class="red">■</span>
+        <span id="t11" class="red">■</span>
+        <span id="t12" class="red">■</span>
+    </div>
+    <div>
+        <span id="t13" class="red">■</span>
+        <span id="t14" class="red">■</span>
+        <span id="t15" class="red">■</span>
+    </div>
+</div>
+<div>
+    <input type="text" id="inp"/>
+    <button onclick = 'onMouseClick()' type="submit">Перевірити</button>
+</div>
+<div id="field">
+
+</div>
+<script>
+
+    Document.prototype.getElementsByIds = function() {
+        var ele=new Array();
+        for(var i=0;i<arguments.length;i++) {
+            ele[i] = document.getElementById(arguments[i]);
+        }
+        return ele;
+    }
+
+    var first = Math.floor(Math.random() * 9) + 1;
+    var second = Math.floor(Math.random() * 9) + 1;
+    var third = Math.floor(Math.random() * 9) + 1;
+
+    switch (first) {
+        case 1:
+            var e1 = document.getElementsByIds("f3","f4","f6","f7","f9","f10","f12");
+            break;
+        case 2:
+            var e1 = document.getElementsByIds("f4","f5","f11","f12");
+            break;
+        case 3:
+            var e1 = document.getElementsByIds("f4","f5","f10","f11");
+            break;
+        case 4:
+            var e1 = document.getElementsByIds("f2","f5","f14","f13","f11","f10");
+            break;
+        case 5:
+            var e1 = document.getElementsByIds("f5","f6","f11","f10");
+            break;
+        case 6:
+            var e1 = document.getElementsByIds("f5","f6","f11");
+            break;
+        case 7:
+            var e1 = document.getElementsByIds("f4","f5","f7","f8","f10","f11","f13","f14");
+            break;
+        case 8:
+            var e1 = document.getElementsByIds("f5","f11");
+            break;
+        case 9:
+            var e1 = document.getElementsByIds("f5","f10","f11");
+            break;
+    }
+
+    switch (second) {
+        case 1:
+            var e2 = document.getElementsByIds("s3","s4","s6","s7","s9","s10","s12");
+            break;
+        case 2:
+            var e2 = document.getElementsByIds("s4","s5","s11","s12");
+            break;
+        case 3:
+            var e2 = document.getElementsByIds("s4","s5","s10","s11");
+            break;
+        case 4:
+            var e2 = document.getElementsByIds("s2","s5","s14","s13","s11","s10");
+            break;
+        case 5:
+            var e2 = document.getElementsByIds("s5","s6","s11","s10");
+            break;
+        case 6:
+            var e2 = document.getElementsByIds("s5","s6","s11");
+            break;
+        case 7:
+            var e2 = document.getElementsByIds("s4","s5","s7","s8","s10","s11","s13","s14");
+            break;
+        case 8:
+            var e2 = document.getElementsByIds("s5","s11");
+            break;
+        case 9:
+            var e2 = document.getElementsByIds("s5","s10","s11");
+            break;
+    }
+    switch (third) {
+        case 1:
+            var e3 = document.getElementsByIds("t3","t4","t6","t7","t9","t10","t12");
+            break;
+        case 2:
+            var e3 = document.getElementsByIds("t4","t5","t11","t12");
+            break;
+        case 3:
+            var e3= document.getElementsByIds("t4","t5","t10","t11");
+            break;
+        case 4:
+            var e3= document.getElementsByIds("t2","t5","t14","t13","t11","t10");
+            break;
+        case 5:
+            var e3= document.getElementsByIds("t5","t6","t11","t10");
+            break;
+        case 6:
+            var e3 = document.getElementsByIds("t5","t6","t11");
+            break;
+        case 7:
+            var e3 = document.getElementsByIds("t4","t5","t7","t8","t10","t11","t13","t14");
+            break;
+        case 8:
+            var e3 = document.getElementsByIds("t5","t11");
+            break;
+        case 9:
+            var e3 = document.getElementsByIds("t5","t10","t11");
+            break;
+    }
+    for(i = 0; i < e1.length; i++)
+    {
+        e1[i].className = "white";
+    }
+    for(i = 0; i < e2.length; i++)
+    {
+        e2[i].className = "white";
+    }
+    for(i = 0; i < e3.length; i++)
+    {
+        e3[i].className = "white";
+    }
+    function onMouseClick() {
+    var str = document.getElementById("inp").value;
+    var right = first.toString() + second.toString() + third.toString() + "";
+    if(str == right) document.getElementById("field").innerHTML = "Наша людина";
+    else document.getElementById("field").innerHTML = "У своїх є ключі";
+    }
+</script>
+</body>
+</html>

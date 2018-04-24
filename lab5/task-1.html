@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Celsius: <input type="text" id="c" onkeyup="myFunction1(this.value)">
+Fahrenheit: <input type="text" id="f" onkeyup="myFunction2(this.value)">
+<script>
+    function myFunction1(val) {
+        document.getElementById("f").value = val * 9/5 + 32;
+    }
+    function myFunction2(val) {
+        document.getElementById("c").value = 5/9*(val - 32);
+    }
+</script>
+
+</body>
+</html>

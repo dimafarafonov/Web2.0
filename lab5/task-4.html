@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="rotator">
+
+</div>
+
+
+<script>
+    var iterator = 0;
+
+    var imagesArray = [ {path: '1.jpg',
+            title : 'Новинка ',
+            description : 'Чудо-молоко'},
+        {path: '2.jpg',
+            title : 'Бабусині казки',
+            description : 'Йогурт чудовий'},
+        {path: '3.jpg',
+            title : 'Сбори',
+            description : 'Молоко яке тебе буде любити'}];
+
+    function tableCreate(){
+        tbl = document.createElement('table');
+        tbl.style.width  = '1100px';
+        tbl.style.border = '1px solid black';
+
+        for(var i = 0; i < 3; i++){
+            var tr = tbl.insertRow();
+            for(var j = 0; j < 3; j++){
+                if(i == 1 && j == 1){
+                    break;
+                }
+                else if(i == 2 && j == 1){
+                    break;
+                }
+                else {
+                    var td = tr.insertCell();
+                    td.style.border = '1px solid black';
+
+                    if(i == 0 && j == 0){
+                        td.setAttribute('rowSpan', '3');
+                        var btn = document.createElement("BUTTON");
+                        btn.setAttribute("id", "prev");
+                        btn.style.visibility = "hidden";
+                        var t = document.createTextNode("Назад");
+                        btn.onclick  = function(){
+                            iterator--;
+                            update();
+                        };
+                        btn.appendChild(t);
+                        td.appendChild(btn);
+                    }
+                    if(i == 0 && j == 2){
+                        td.setAttribute('rowSpan', '3');
+                        var btn = document.createElement("BUTTON");
+                        btn.setAttribute("id", "next");
+                        var t = document.createTextNode("Вперед");
+                        btn.onclick  = function(){
+                            iterator++;
+                            update();
+
+                        };
+                        btn.appendChild(t);
+                        td.appendChild(btn);
+                        }
+
+                    if(i == 1 && j == 0){
+                        var image = document.createElement("img");
+                        image.setAttribute("src", imagesArray[iterator].path);
+                        image.setAttribute("id", "myimg");
+                        td.appendChild(image);
+                    }
+
+                    if(i == 2 && j == 0){
+                        td.setAttribute("id", "main2");
+                        var strong = document.createElement("STRONG");
+                        var txt1 = document.createTextNode(imagesArray[iterator].title);
+                        strong.appendChild(txt1);
+                        td.appendChild(strong);
+                        var txt2 = document.createTextNode(imagesArray[iterator].description);
+                        td.appendChild(txt2);
+                    }
+
+                    if(i == 0 && j == 1){
+                        td.setAttribute("id", "main1");
+                        var txt = document.createTextNode("Фото " + parseInt(iterator+1) + " з " + imagesArray.length);
+                        td.appendChild(txt);
+                    }
+                }
+            }
+        }
+        document.getElementById("rotator").appendChild(tbl);
+    }
+    tableCreate();
+
+    function update() {
+        document.getElementById("myimg").setAttribute("src", imagesArray[iterator].path);
+
+        if (iterator == 0) document.getElementById("prev").style.visibility = "hidden";
+        else document.getElementById("prev").style.visibility = "visible";
+        if (iterator == 2) document.getElementById("next").style.visibility = "hidden";
+        else document.getElementById("next").style.visibility = "visible";
+
+        document.getElementById("main2").innerHTML = "";
+        var strong = document.createElement("STRONG");
+        var txt1 = document.createTextNode(imagesArray[iterator].title);
+        strong.appendChild(txt1);
+        document.getElementById("main2").appendChild(strong);
+        var txt2 = document.createTextNode(imagesArray[iterator].description);
+        document.getElementById("main2").appendChild(txt2);
+
+        document.getElementById("main1").innerHTML = "";
+        document.getElementById("main1").setAttribute("id", "main1");
+        var txt = document.createTextNode("Фото " + parseInt(iterator+1) + " з " + imagesArray.length);
+        document.getElementById("main1").appendChild(txt);
+    }
+
+</script>
+</body>
+</html>

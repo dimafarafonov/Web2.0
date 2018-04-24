@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><span>Загальний рахунок: </span><span id="score1"></span><span id="score2"></span></div>
+<div><button onclick = 'onMouseClick1()' type="submit">Наступне завдання</button></div>
+<div><span id="nums"></span>
+     <input type="number" id="inp" onfocus="this.value=''"/>
+     <button onclick = 'onMouseClick2()' type="submit">Перевірити</button></div>
+<div id="field"></div>
+<script>
+    var pos = 0;
+    var zag = 0;
+    function onMouseClick1() {
+        var a = Math.floor(Math.random() * 8) + 2;
+        var b = Math.floor(Math.random() * 8) + 2;
+        var numStr = a + " × " + b;
+        window.sol = parseInt(a * b);
+        document.getElementById("nums").innerHTML = numStr
+    }
+
+    function onMouseClick2() {
+        var s = parseInt(document.getElementById("inp").value);
+        zag++;
+        if (sol == s) {
+            document.getElementById("field").innerHTML = "Правильно";
+            pos++;
+        }
+        else{
+            document.getElementById("field").innerHTML = "Неправильно";
+        }
+        var rah = Math.round((pos/zag)*100);
+        document.getElementById("score1").innerHTML = rah + "% (";
+        document.getElementById("score2").innerHTML = pos + " правильних відповідей з " + zag + ")";
+    }
+</script>
+</body>
+</html>

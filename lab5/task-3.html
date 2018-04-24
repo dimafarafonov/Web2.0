@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><span>Загальний рахунок: </span><span id="score1"></span><span id="score2"></span></div>
+<div><button onclick = 'onMouseClick1()' type="submit">Наступне завдання</button></div>
+<div><span id="nums"></span></div>
+<div id="but">
+    <div><input type="radio" id="1i" class="" onclick="onMouseClick2()"><span id="1"></span></div>
+    <div><input type="radio" id="2i" class="" onclick="onMouseClick3()"><span id="2"></span></div>
+    <div><input type="radio" id="3i" class="" onclick="onMouseClick4()"><span id="3"></span></div>
+    <div><input type="radio" id="4i" class="" onclick="onMouseClick5()"><span id="4"></span></div>
+</div>
+<div id="field"></div>
+<script>
+    var pos = 0;
+    var zag = 0;
+    var rah = 0;
+    disableAll();
+    function onMouseClick1() {
+        document.getElementById("1i").className = "incorrect";
+        document.getElementById("2i").className = "incorrect";
+        document.getElementById("3i").className = "incorrect";
+        document.getElementById("4i").className = "incorrect";
+        document.getElementById("1i").disabled = false;
+        document.getElementById("2i").disabled = false;
+        document.getElementById("3i").disabled = false;
+        document.getElementById("4i").disabled = false;
+
+        var a = Math.floor(Math.random() * 8) + 2;
+        var b = Math.floor(Math.random() * 8) + 2;
+        var numStr = a + " × " + b;
+        window.sol = parseInt(a * b);
+        document.getElementById("nums").innerHTML = numStr;
+        var rID = Math.floor(Math.random() * 4) + 1;
+
+        document.getElementById(rID.toString()).innerHTML = sol.toString();
+        document.getElementById(rID.toString()+"i").className = "correct";
+
+        if(document.getElementById("1i").classList.contains('incorrect')){
+            document.getElementById("1").innerHTML = (sol - Math.floor(Math.random() * 5) - 6).toString();
+        }
+        if(document.getElementById("2i").classList.contains('incorrect')){
+            document.getElementById("2").innerHTML = (sol - Math.floor(Math.random() * 5) +11).toString();
+        }
+        if(document.getElementById("3i").classList.contains('incorrect')){
+            document.getElementById("3").innerHTML = (sol - Math.floor(Math.random() * 5) +6).toString();
+        }
+        if(document.getElementById("4i").classList.contains('incorrect')){
+            document.getElementById("4").innerHTML = (sol - Math.floor(Math.random() * 5) -14).toString();
+        }
+
+    }
+
+    function onMouseClick2() {
+        zag++;
+        if (document.getElementById("1i").classList.contains('correct')) {
+            document.getElementById("field").innerHTML = "Правильно";
+            pos++;
+        }
+        else{
+            document.getElementById("field").innerHTML = "Помилка, правильна відповідь - " + sol;
+        }
+        document.getElementById("1i").checked = false;
+        disableAll();
+        rah = Math.round((pos/zag)*100);
+        document.getElementById("score1").innerHTML = rah + "% (";
+        document.getElementById("score2").innerHTML = pos + " правильних відповідей з " + zag + ")";
+    }
+    function onMouseClick3() {
+        zag++;
+        if (document.getElementById("2i").classList.contains('correct')) {
+            document.getElementById("field").innerHTML = "Правильно";
+            pos++;
+        }
+        else{
+            document.getElementById("field").innerHTML = "Помилка, правильна відповідь - " + sol;
+        }
+        document.getElementById("2i").checked = false;
+        disableAll();
+        rah = Math.round((pos/zag)*100);
+        document.getElementById("score1").innerHTML = rah + "% (";
+        document.getElementById("score2").innerHTML = pos + " правильних відповідей з " + zag + ")";
+    }
+    function onMouseClick4() {
+        zag++;
+        if (document.getElementById("3i").classList.contains('correct')) {
+            document.getElementById("field").innerHTML = "Правильно";
+            pos++;
+        }
+        else{
+            document.getElementById("field").innerHTML = "Помилка, правильна відповідь - " + sol;
+        }
+        document.getElementById("3i").checked = false;
+        disableAll();
+        rah = Math.round((pos/zag)*100);
+        document.getElementById("score1").innerHTML = rah + "% (";
+        document.getElementById("score2").innerHTML = pos + " правильних відповідей з " + zag + ")";
+    }
+    function onMouseClick5() {
+        zag++;
+        if (document.getElementById("4i").classList.contains('correct')) {
+            document.getElementById("field").innerHTML = "Правильно";
+            pos++;
+        }
+        else{
+            document.getElementById("field").innerHTML = "Помилка, правильна відповідь - " + sol;
+        }
+        document.getElementById("4i").checked = false;
+        disableAll();
+        rah = Math.round((pos/zag)*100);
+        document.getElementById("score1").innerHTML = rah + "% (";
+        document.getElementById("score2").innerHTML = pos + " правильних відповідей з " + zag + ")";
+    }
+    
+    function disableAll() {
+        document.getElementById("1i").disabled = true;
+        document.getElementById("2i").disabled = true;
+        document.getElementById("3i").disabled = true;
+        document.getElementById("4i").disabled = true;
+    }
+
+</script>
+</body>
+</html>
