@@ -1,0 +1,19 @@
+.overlay {
+    background-color: rgba(1, 1, 1, 0.7);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: #fcc105;
+    letter-spacing: .1em;
+    text-shadow: 3px 3px #ff981d, 5px 5px 6px rgba(230, 150, 232, 1);;
+    font-family: Courier;
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 26.4px;
+    font-variant: small-caps;
+    text-align: center;
+    padding-top: 250px;
+}
