@@ -1,0 +1,12 @@
+#primeContainer {
+    width: 500px;
+    height: 300px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+input {
+    width: 100px;
+}
+button {
+    width: 70px;
+}

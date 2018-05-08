@@ -66,7 +66,7 @@ function init()
 function click(event) {
     var src = event.target;
     var id = src.id;
-    if (event.which == 3 && flags > 0) {
+    if (event.which == 1  && flags > 0) {
         switch(getNumber(id))
         {
             case 'x' : tile[id].src = 'f.png'; flags--; break;
@@ -76,7 +76,7 @@ function click(event) {
 
     document.getElementById('status').innerHTML = "Mines remaining: " + flags;
 
-    if(event.which == 1 && getNumber(id) != 'f')
+    if(event.which == 3 && getNumber(id) != 'f')
     {
         if(board[id] == 'mine')
         {

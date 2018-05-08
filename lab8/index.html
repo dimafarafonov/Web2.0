@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js" async></script>
+    <script src="PrimeWorker.js" async></script>
+    <link href="style.css" rel="stylesheet"/>
+    <script>
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                tyt.innerHTML =
+                     position.coords.latitude + ", " + position.coords.longitude
+            }
+        );
+
+    </script>
+</head>
+<body>
+<form>
+<p>Діапазон чисел від <input id="from"/> до <input id="to"/></p>
+<button id="searchButton" onclick="doSearch()">Старт</button>
+<button onClick="cancelSearch()">Стоп</button>
+<div><textarea id="primeContainer"></textarea></div>
+<div id="status"></div>
+</form>
+<div id="tyt"></div>
+</body>
+</html>

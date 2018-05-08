@@ -1,0 +1,17 @@
+input, select, option, label {
+    display: table-cell;
+    padding: 4px;
+    margin: 4px;
+    width: 120px;
+    font-size: 16px;
+}
+
+div {
+    display: table-row;
+}
+
+input[type="text"] {
+    width: 108px;
+}
+
+
