@@ -2,48 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="script.js"></script>
-    <script src="burger.js" async></script>
+    <title>TETRIS</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<form>
-    <div>
-        <label for="size">Вид</label>
-        <select id="size">
-            <option value="size_small">Маленький</option>
-            <option value="size_large">Большой</option>
-        </select>
-    </div>
-    <div>
-        <label for="stuffing">Начинка</label>
-        <select id="stuffing">
-            <option value="stuffing_cheese">Сыр</option>
-            <option value="stuffing_salad">Салат</option>
-            <option value="stuffing_potato">Картофель</option>
-        </select>
-    </div>
-    <div>
-        <label for="mayo">Приправа</label>
-        <input id="mayo" value="topping_mayo" type="checkbox"/>
-    </div>
-    <div>
-        <label for="spice">Майонез</label>
-        <input id="spice" value="topping_spice" type="checkbox"/>
-    </div>
-    <div>
-        <label for=""></label>
-        <input id="calculate" type="button" value="Посчитать">
-    </div>
-    <div>
-        <label for="calories">Калории</label>
-        <input id="calories" type="text"/>
-    </div>
-    <div>
-        <label for="price">Цена</label>
-        <input id="price" type="text"/>
-    </div>
-</form>
+<body class="body">
+<audio loop='loop' autoplay='autoplay' hidden='hidden'>
+    <source src="song.mp3" type="audio/mpeg"/>
+</audio>
+<div id="score"></div>
+
 </body>
+<script src="script.js"></script>
 </html>
